@@ -1,0 +1,29 @@
+{
+  "name": "@dogs/svelte-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/svelte": "^5.4.2",
+    "@vitejs/plugin-legacy": "^8.2.3",
+    "jsdom": "^30.0.1",
+    "sass-embedded": "^1.104.0",
+    "svelte": "^5.57.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
+  },
+  "dependencies": {
+    "@lucide/svelte": "^1.43.0",
+    "svelte-i18n": "^4.0.1"
+  }
+}

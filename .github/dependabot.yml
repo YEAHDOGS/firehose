@@ -1,0 +1,45 @@
+# Dependabot: the rolling update list, automated
+#
+# This is the template's heartbeat. Every Monday morning (Chicago time)
+# Dependabot opens grouped PRs -- one for the build stack, one for GitHub
+# Actions. Each PR runs the full CI gate (npm ci + build + smoke test).
+# Green + review = merge. Red = the fail-safe doing its job; the PR stays
+# open until the breakage is understood, never force-merged.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: "America/Chicago"
+    groups:
+      build-stack:
+        patterns:
+          - "vite*"
+          - "svelte*"
+          - "@sveltejs/*"
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "sass-embedded"
+          - "vitest"
+          - "jsdom"
+          - "@testing-library/*"
+          - "@lucide/*"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - dependencies
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: "America/Chicago"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - dependencies
